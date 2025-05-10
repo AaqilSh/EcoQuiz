@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Which gas is primarily responsible for global warming?",
+    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answer": "Carbon Dioxide"
+  },
+  {
+    "question": "What can be recycled?",
+    "options": ["Plastic bottles", "Styrofoam", "Chip bags", "Pizza boxes"],
+    "answer": "Plastic bottles"
+  },
+  {
+    "question": "What is the most sustainable energy source?",
+    "options": ["Coal", "Wind", "Oil", "Natural Gas"],
+    "answer": "Wind"
+  }
+]
