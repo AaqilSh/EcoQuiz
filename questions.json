@@ -2,17 +2,23 @@
   {
     "question": "Which gas is primarily responsible for global warming?",
     "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    "answer": "Carbon Dioxide"
+    "answer": "Carbon Dioxide",
+	    "difficulty": "easy"
+
   },
   {
     "question": "What can be recycled?",
     "options": ["Plastic bottles", "Styrofoam", "Chip bags", "Pizza boxes"],
-    "answer": "Plastic bottles"
+    "answer": "Plastic bottles",
+	    "difficulty": "easy"
+
   },
   {
     "question": "What is the most sustainable energy source?",
     "options": ["Coal", "Wind", "Oil", "Natural Gas"],
-    "answer": "Wind"
+    "answer": "Wind",
+	    "difficulty": "easy"
+
   },
   {
     "question": "What does 'biodegradable' mean?",
@@ -22,12 +28,16 @@
       "Turns into metal",
       "Lasts forever"
     ],
-    "answer": "Breaks down naturally in the environment"
+    "answer": "Breaks down naturally in the environment",
+	    "difficulty": "medium"
+
   },
   {
     "question": "Which of these items takes the longest to decompose?",
     "options": ["Banana peel", "Plastic bottle", "Newspaper", "Cotton t-shirt"],
-    "answer": "Plastic bottle"
+    "answer": "Plastic bottle",
+	    "difficulty": "hard"
+
   },
   {
     "question": "How can you reduce water waste at home?",
@@ -37,17 +47,23 @@
       "Take longer showers",
       "Use bottled water only"
     ],
-    "answer": "Fix leaky faucets"
+    "answer": "Fix leaky faucets",
+	    "difficulty": "medium"
+
   },
   {
     "question": "Which of these is a renewable energy source?",
     "options": ["Natural Gas", "Coal", "Wind", "Diesel"],
-    "answer": "Wind"
+    "answer": "Wind",
+	    "difficulty": "hard"
+
   },
   {
     "question": "Which country leads the world in solar energy production (as of 2023)?",
     "options": ["Germany", "USA", "India", "China"],
-    "answer": "China"
+    "answer": "China",
+	    "difficulty": "medium"
+
   },
   {
     "question": "Why are bees important for the environment?",
@@ -57,7 +73,9 @@
       "They purify water",
       "They scare away pests"
     ],
-    "answer": "They pollinate plants"
+    "answer": "They pollinate plants",
+	    "difficulty": "hard"
+
   },
   {
     "question": "What is 'upcycling'?",
@@ -67,6 +85,8 @@
       "Breaking down materials for recycling",
       "Disposing of toxic waste safely"
     ],
-    "answer": "Turning waste into higher-value products"
+    "answer": "Turning waste into higher-value products",
+	    "difficulty": "hard"
+
   }
 ]
