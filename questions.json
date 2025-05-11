@@ -13,5 +13,61 @@
     "question": "What is the most sustainable energy source?",
     "options": ["Coal", "Wind", "Oil", "Natural Gas"],
     "answer": "Wind"
+  },
+  {
+    "question": "What does 'biodegradable' mean?",
+    "options": [
+      "Breaks down naturally in the environment",
+      "Can only be burned",
+      "Turns into metal",
+      "Lasts forever"
+    ],
+    "answer": "Breaks down naturally in the environment"
+  },
+  {
+    "question": "Which of these items takes the longest to decompose?",
+    "options": ["Banana peel", "Plastic bottle", "Newspaper", "Cotton t-shirt"],
+    "answer": "Plastic bottle"
+  },
+  {
+    "question": "How can you reduce water waste at home?",
+    "options": [
+      "Leave the tap running while brushing teeth",
+      "Fix leaky faucets",
+      "Take longer showers",
+      "Use bottled water only"
+    ],
+    "answer": "Fix leaky faucets"
+  },
+  {
+    "question": "Which of these is a renewable energy source?",
+    "options": ["Natural Gas", "Coal", "Wind", "Diesel"],
+    "answer": "Wind"
+  },
+  {
+    "question": "Which country leads the world in solar energy production (as of 2023)?",
+    "options": ["Germany", "USA", "India", "China"],
+    "answer": "China"
+  },
+  {
+    "question": "Why are bees important for the environment?",
+    "options": [
+      "They eat waste",
+      "They pollinate plants",
+      "They purify water",
+      "They scare away pests"
+    ],
+    "answer": "They pollinate plants"
+  },
+  {
+    "question": "What is 'upcycling'?",
+    "options": [
+      "Turning waste into higher-value products",
+      "Cycling uphill",
+      "Breaking down materials for recycling",
+      "Disposing of toxic waste safely"
+    ],
+    "answer": "Turning waste into higher-value products"
   }
+
 ]
