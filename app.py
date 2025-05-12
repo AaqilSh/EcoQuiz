@@ -13,4 +13,13 @@ def load_questions():
 def home():
     return render_template("home.html")
 
-
+@app.route("/start")
+def start_quiz():
+    difficulty = request.args.get("difficulty", "easy")
+    all_questions = load_questions()
+    filtered = [q for q in all_questions if q["difficulty"] == difficulty]
+    random.shuffle(filtered)
+    session['questions'] = filtered
+    session['current'] = 0
+    session['score'] = 0
+    return redirect("/quiz")
