@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco Quiz Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#34D399",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <h1>🌱 Welcome to the Eco Quiz Game!</h1>
-    <form action="/start" method="get">
-      <label>Select difficulty:</label>
-      <select name="difficulty">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-      </select>
-      <button type="submit">Start Quiz</button>
-    </form>
+  <body
+    class="bg-gray-900 text-white min-h-screen flex items-center justify-center"
+  >
+    <div class="w-full max-w-md bg-gray-800 p-8 rounded-2xl shadow-xl">
+      <h1 class="text-3xl font-bold text-primary text-center mb-6">
+        🌱 Eco Quiz Game
+      </h1>
+      <form action="/start" method="get" class="space-y-4">
+        <label for="difficulty" class="block text-sm font-medium text-gray-300"
+          >Select Difficulty</label
+        >
+        <select
+          name="difficulty"
+          id="difficulty"
+          class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <option value="easy" class="text-black">Easy</option>
+          <option value="medium" class="text-black">Medium</option>
+          <option value="hard" class="text-black">Hard</option>
+        </select>
+        <button
+          type="submit"
+          class="w-full bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+        >
+          Start Quiz
+        </button>
+      </form>
+    </div>
   </body>
 </html>
