@@ -23,3 +23,18 @@ def start_quiz():
     session['current'] = 0
     session['score'] = 0
     return redirect("/quiz")
+
+@app.route("/quiz", methods=["GET", "POST"])
+def quiz():
+    if request.method == "POST":
+        selected = request.form.get("answer")
+        current_q = session['questions'][session['current']]
+        if selected == current_q["answer"]:
+            session['score'] += 1
+        session['current'] += 1
+
+    if session['current'] >= len(session['questions']):
+        return redirect("/result")
+    
+    question = session['questions'][session['current']]
+    return render_template("quiz.html", question=question, current=session['current'] + 1, total=len(session['questions']))
