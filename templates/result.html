@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#34D399",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-900 text-white min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="w-full max-w-lg bg-gray-800 p-8 rounded-2xl shadow-xl text-center"
+    >
+      <h1 class="text-3xl font-bold text-primary mb-6">🌍 Quiz Completed!</h1>
+      <p class="text-lg mb-4">
+        You scored
+        <span class="text-primary font-semibold text-2xl">{{ score }}</span> out
+        of <span class="text-primary">{{ total }}</span>
+      </p>
+
+      {% if score == total %}
+      <p class="text-green-400 font-medium">
+        Perfect score! You're an eco genius! 🌿
+      </p>
+      {% elif score > (total // 2) %}
+      <p class="text-yellow-300 font-medium">
+        Nice job! You know your eco facts! 💡
+      </p>
+      {% else %}
+      <p class="text-red-400 font-medium">
+        Keep learning! 🌱 The planet needs you.
+      </p>
+      {% endif %}
+
+      <div class="mt-6">
+        <a
+          href="/"
+          class="inline-block bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+        >
+          Play Again
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
