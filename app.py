@@ -38,3 +38,9 @@ def quiz():
     
     question = session['questions'][session['current']]
     return render_template("quiz.html", question=question, current=session['current'] + 1, total=len(session['questions']))
+
+@app.route("/result")
+def result():
+    score = session.get('score', 0)
+    total = len(session.get('questions', []))
+    return render_template("result.html", score=score, total=total)
