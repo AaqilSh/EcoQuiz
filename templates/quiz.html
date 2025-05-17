@@ -26,7 +26,13 @@
           <div class="space-y-2">
       {% for opt in question.options %}
               <label class="flex items-center space-x-3">
-      <input type="radio" name="answer" value="{{ opt }}" required  class="form-radio h-5 w-5 text-primary bg-gray-700 border-gray-600 focus:ring-primary" /> 
+       <input
+      type="radio"
+      name="answer"
+      value="{{ opt }}"
+      required
+      class="form-radio h-5 w-5 text-primary bg-gray-700 border-gray-600 focus:ring-primary"
+    /> 
                 <span class="text-gray-200">{{ opt }}</span>
       {% endfor %}
               </div>
