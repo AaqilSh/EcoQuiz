@@ -26,13 +26,30 @@ def start_quiz():
 
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
+    if 'index' not in session:
+        session['index'] = 0
+        session['score'] = 0
+        random.shuffle(questions)
+        session['question_order'] = questions
+
+    current_index = session['index']
+    total = len(session['question_order'])
+
     if request.method == "POST":
         selected = request.form.get("answer")
         current_q = session['questions'][session['current']]
+        correct_answer = session['question_order'][current_index - 1]['answer']
+
         if selected == current_q["answer"]:
             session['score'] += 1
         session['current'] += 1
 
+
+    if current_index >= total:
+        score = session['score']
+        session.clear()
+        return render_template('result.html', score=score, total=total)
+        
     if session['current'] >= len(session['questions']):
         return redirect("/result")
     
