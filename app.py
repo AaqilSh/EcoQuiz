@@ -51,6 +51,11 @@ def quiz():
     session['index'] += 1
     return render_template('quiz.html', question=question, current=current_index + 1, total=total)
 
+@app.route('/restart')
+def restart():
+    session.clear()
+    return redirect(url_for('quiz'))
+
 @app.route("/result")
 def result():
     score = session.get('score', 0)
