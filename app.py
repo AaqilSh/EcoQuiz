@@ -36,25 +36,20 @@ def quiz():
     total = len(session['question_order'])
 
     if request.method == "POST":
-        selected = request.form.get("answer")
-        current_q = session['questions'][session['current']]
+        selected_answer = request.form.get('answer')
         correct_answer = session['question_order'][current_index - 1]['answer']
 
-        if selected == current_q["answer"]:
+        if selected_answer == correct_answer:
             session['score'] += 1
-        session['current'] += 1
-
 
     if current_index >= total:
         score = session['score']
         session.clear()
         return render_template('result.html', score=score, total=total)
         
-    if session['current'] >= len(session['questions']):
-        return redirect("/result")
-    
-    question = session['questions'][session['current']]
-    return render_template("quiz.html", question=question, current=session['current'] + 1, total=len(session['questions']))
+    question = session['question_order'][current_index]
+    session['index'] += 1
+    return render_template('quiz.html', question=question, current=current_index + 1, total=total)
 
 @app.route("/result")
 def result():
