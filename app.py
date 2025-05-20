@@ -26,6 +26,7 @@ def start_quiz():
 
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
+    questions=load_questions()
     if 'index' not in session:
         session['index'] = 0
         session['score'] = 0
