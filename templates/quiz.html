@@ -57,5 +57,20 @@
       <button type="submit" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
 >Submit</button>
     </form>
+  <script>
+      let timeLeft = 15;
+      const timerDisplay = document.getElementById('timer');
+      const form = document.getElementById('quizForm');
+
+      const countdown = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          form.submit();
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
