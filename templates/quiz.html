@@ -53,7 +53,7 @@
               </div>
                     <div class="pt-4">
 
-      <button type="submit" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">Submit</button>
+      <button type="submit" id="submitBtn" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" disabled>Submit</button>
                     </div>
     </form>
   </div>
@@ -71,7 +71,11 @@
           if (form) form.submit();
         }
       }, 1000);
-    
+    document.querySelectorAll('input[name="answer"]').forEach((input) => {
+  input.addEventListener('change', () => {
+    document.getElementById('submitBtn').disabled = false;
+  });
+});
     </script>
   </body>
 </html>
