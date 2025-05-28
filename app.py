@@ -37,16 +37,35 @@ def quiz():
     total = len(session['question_order'])
 
     if request.method == "POST":
-        selected_answer = request.form.get('answer')
-        correct_answer = session['question_order'][current_index - 1]['answer']
+        if 'answer' in request.form:
+            selected_answer = request.form.get('answer')
+            correct_answer = session['question_order'][current_index]['answer']
 
-        if selected_answer == correct_answer:
-            session['score'] += 1
+            # Evaluate and render same question with result
+            is_correct = selected_answer == correct_answer
+            if is_correct:
+                session['score'] += 1
 
-    if current_index >= total:
-        score = session['score']
-        session.clear()
-        return render_template('result.html', score=score, total=total)
+            question = session['question_order'][current_index]
+
+            return render_template(
+                'quiz.html',
+                question=question,
+                current=current_index + 1,
+                total=total,
+                selected=selected_answer,
+                correct=correct_answer,
+                show_result=True,
+                is_correct=is_correct
+            )
+        elif 'next' in request.form:
+            session['index'] += 1
+            current_index = session['index']
+          
+            if current_index >= total:
+                score = session['score']
+                session.clear()
+                return render_template('result.html', score=score, total=total)
         
     question = session['question_order'][current_index]
     session['index'] += 1
