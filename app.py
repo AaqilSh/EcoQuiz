@@ -52,6 +52,14 @@ def quiz():
     session['index'] += 1
     return render_template('quiz.html', question=question, current=current_index + 1, total=total)
 
+@app.route("/next", methods=["POST"])
+def next_question():
+    session["q_index"] += 1
+    if session["q_index"] >= len(questions):
+        return redirect("/result")  # Redirect to final result page
+    return redirect("/")
+
+
 @app.route('/restart')
 def restart():
     session.clear()
