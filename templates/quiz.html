@@ -56,6 +56,12 @@
       <button type="submit" id="submitBtn" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" {% if show_result %}disabled{% endif %}>Submit</button>
                     </div>
     </form>
+    {% if show_result %}
+  <form method="post">
+    <input type="hidden" name="next" value="1"/>
+    <button type="submit" class="btn-next">Next</button>
+  </form>
+{% endif %}
   </div>
 
   <script src="/static/quiz.js"></script>
