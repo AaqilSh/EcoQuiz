@@ -74,8 +74,11 @@
     </div>
   {% endif %}
                     <div class="pt-4">
-
-      <button type="submit" id="submitBtn" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" {% if show_result %}disabled{% endif %}>Submit</button>
+      {% if not show_result %}
+      <button type="submit" name="answer" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">Submit</button>
+    {% else %}
+      <button type="submit" name="next" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">Next</button>
+    {% endif %}
                     </div>
     </form>
     {% if show_result %}
