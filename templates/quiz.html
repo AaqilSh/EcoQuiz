@@ -64,6 +64,15 @@
               </label>
       {% endfor %}
               </div>
+{% if show_result %}
+    <div class="mt-4 text-lg font-semibold">
+      {% if is_correct %}
+        ✅ Correct!
+      {% else %}
+        ❌ Wrong. Correct answer: <span class="text-primary font-bold">{{ correct }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
                     <div class="pt-4">
 
       <button type="submit" id="submitBtn" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" {% if show_result %}disabled{% endif %}>Submit</button>
