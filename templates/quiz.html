@@ -40,8 +40,20 @@
     <p class="text-lg font-medium mb-4">{{ question.question }}</p>
     <div class="space-y-2">
       {% for opt in question.options %}
-              <label class="flex items-center space-x-3">
-       <input
+           {% set is_selected = opt == selected %}
+      {% set is_correct_opt = opt == correct %}
+
+      <label class="flex items-center space-x-3 
+        {% if show_result %}
+          {% if is_correct_opt %}
+            bg-green-700 
+          {% elif is_selected %}
+            bg-red-700
+          {% endif %}
+        {% endif %}
+        p-2 rounded-lg transition
+        ">       
+      <input
       type="radio"
       name="answer"
       value="{{ opt }}"
