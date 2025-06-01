@@ -17,6 +17,15 @@
         },
       };
     </script>
+    <style>
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+</style>
   </head>
  <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
    <div class="max-w-xl w-full">
