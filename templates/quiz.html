@@ -78,9 +78,9 @@
       {% endfor %}
               </div>
 {% if show_result %}
-    <div class="mt-4 text-lg font-semibold">
+    <div class="mt-4 text-lg font-semibold animate-fade-in">
       {% if is_correct %}
-        ✅ Correct!
+      <div class="text-green-400 transition duration-300 ease-out scale-100">  ✅ Correct! </div>
       {% else %}
         ❌ Wrong. Correct answer: <span class="text-primary font-bold">{{ correct }}</span>
       {% endif %}
