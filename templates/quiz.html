@@ -52,13 +52,17 @@
            {% set is_selected = opt == selected %}
       {% set is_correct_opt = opt == correct %}
 
-      <label class="flex items-center space-x-3 
-        {% if show_result %}
+      <label class="flex items-center space-x-3 p-3 rounded-xl transition duration-300 ease-in-out transform
+       {% if show_result %}
           {% if is_correct_opt %}
-            bg-green-700 
+            bg-green-700 scale-105
           {% elif is_selected %}
-            bg-red-700
+            bg-red-700 scale-105
+          {% else %}
+            bg-gray-700
           {% endif %}
+        {% else %}
+          hover:bg-gray-700 hover:scale-105
         {% endif %}
         p-2 rounded-lg transition
         ">       
