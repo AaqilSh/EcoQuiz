@@ -82,7 +82,11 @@
       {% if is_correct %}
       <div class="text-green-400 transition duration-300 ease-out scale-100">  ✅ Correct! </div>
       {% else %}
+              <div class="text-red-400 transition duration-300 ease-out scale-100">
+
         ❌ Wrong. Correct answer: <span class="text-primary font-bold">{{ correct }}</span>
+                </div>
+
       {% endif %}
     </div>
   {% endif %}
