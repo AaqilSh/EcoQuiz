@@ -68,7 +68,7 @@ def quiz():
                 return render_template('result.html', score=score, total=total)
         
     question = session['question_order'][current_index]
-     return render_template('quiz.html', question=question, current=current_index + 1, total=total, show_result=False
+    return render_template('quiz.html', question=question, current=current_index + 1, total=total, show_result=False
 )
 
 @app.route("/next", methods=["POST"])
