@@ -46,7 +46,7 @@ def quiz():
                 session['score'] += 1
 
             question = session['question_order'][current_index]
-
+            fact = question.get("fact", "")
             return render_template(
                 'quiz.html',
                 question=question,
@@ -55,7 +55,8 @@ def quiz():
                 selected=selected_answer,
                 correct=correct_answer,
                 show_result=True,
-                is_correct=is_correct
+                is_correct=is_correct,
+                fact=fact
             )
         elif 'next' in request.form:
             session['index'] += 1
@@ -67,7 +68,7 @@ def quiz():
                 return render_template('result.html', score=score, total=total)
         
     question = session['question_order'][current_index]
-    return render_template('quiz.html', question=question, current=current_index + 1, total=total, show_result=False
+     return render_template('quiz.html', question=question, current=current_index + 1, total=total, show_result=False
 )
 
 @app.route("/next", methods=["POST"])
