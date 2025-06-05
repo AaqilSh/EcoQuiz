@@ -108,5 +108,40 @@
       "fact": "Upcycling gives new life to old items, reducing waste while encouraging creativity and sustainability."
 
 
+  },
+  {
+    "question": "What is the main cause of ocean pollution?",
+    "options": ["Plastic waste", "Oil spills", "Fishing nets", "Radioactive waste"],
+    "answer": "Plastic waste",
+    "difficulty": "medium",
+    "fact": "Over 8 million tons of plastic end up in the ocean each year, harming marine life and ecosystems."
+  },
+  {
+    "question": "Which of these appliances uses the most electricity at home?",
+    "options": ["Refrigerator", "TV", "Washing machine", "Air conditioner"],
+    "answer": "Air conditioner",
+    "difficulty": "medium",
+    "fact": "Air conditioning can account for up to 60% of a household's summer electricity bill."
+  },
+  {
+    "question": "What is the purpose of composting?",
+    "options": ["To burn waste", "To make fertilizer", "To clean water", "To kill bacteria"],
+    "answer": "To make fertilizer",
+    "difficulty": "easy",
+    "fact": "Composting turns food scraps and yard waste into nutrient-rich soil, reducing landfill waste."
+  },
+  {
+    "question": "Which tree-planting initiative is aiming to plant over a trillion trees worldwide?",
+    "options": ["Green Earth Project", "One Trillion Trees", "Billion Trees Initiative", "Global Forest Act"],
+    "answer": "One Trillion Trees",
+    "difficulty": "hard",
+    "fact": "The 'One Trillion Trees' initiative aims to combat climate change by restoring global forests."
+  },
+  {
+    "question": "What is the average water footprint of producing one cotton t-shirt?",
+    "options": ["200 liters", "500 liters", "2,700 liters", "5,000 liters"],
+    "answer": "2,700 liters",
+    "difficulty": "hard",
+    "fact": "Producing one cotton t-shirt can use up to 2,700 liters of water—enough for one person to drink for 2.5 years!"
   }
 ]
