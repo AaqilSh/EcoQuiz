@@ -41,12 +41,11 @@ def quiz():
             selected_answer = request.form.get('answer')
             correct_answer = session['question_order'][current_index]['answer']
             is_correct = selected_answer == correct_answer
-            
+            fact = session['question_order'][current_index]['fact']
             if is_correct:
                 session['score'] += 1
 
             question = session['question_order'][current_index]
-            fact = question.get("fact", "")
             return render_template(
                 'quiz.html',
                 question=question,
