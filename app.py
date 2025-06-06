@@ -40,8 +40,9 @@ def quiz():
         if 'answer' in request.form:
             selected_answer = request.form.get('answer')
             correct_answer = session['question_order'][current_index]['answer']
+            fact = session['question_order'][current_index].get('fact', '')
+            print(fact)
             is_correct = selected_answer == correct_answer
-            fact = session['question_order'][current_index]['fact']
             if is_correct:
                 session['score'] += 1
 

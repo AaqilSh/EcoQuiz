@@ -3,8 +3,8 @@
     "question": "Which gas is primarily responsible for global warming?",
     "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
     "answer": "Carbon Dioxide",
-	    "difficulty": "easy",
-      "fact": "Carbon dioxide is a greenhouse gas that traps heat in our atmosphere, leading to climate change."
+    "difficulty": "easy",
+    "fact": "Carbon dioxide is a greenhouse gas that traps heat in our atmosphere, leading to climate change."
 
 
   },
