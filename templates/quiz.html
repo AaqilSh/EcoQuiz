@@ -47,6 +47,10 @@
       </div>
     <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl">
 
+      <div class="progress-container">
+  <div class="progress-bar" id="progress-bar" style="width: {{ (current / total) * 100 }}%;"></div>
+</div>
+
 <div x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)" x-show="show"
      x-transition:enter="transition-opacity duration-500"
      x-transition:enter-start="opacity-0"
