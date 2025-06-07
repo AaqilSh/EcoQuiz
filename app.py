@@ -36,12 +36,14 @@ def quiz():
     current_index = session['index']
     total = len(session['question_order'])
 
+    if 'answers' not in session:
+    session['answers'] = []
+
     if request.method == "POST":
         if 'answer' in request.form:
             selected_answer = request.form.get('answer')
             correct_answer = session['question_order'][current_index]['answer']
             fact = session['question_order'][current_index].get('fact', '')
-            print(fact)
             is_correct = selected_answer == correct_answer
             if is_correct:
                 session['score'] += 1
