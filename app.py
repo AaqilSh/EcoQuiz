@@ -78,7 +78,7 @@ def quiz():
                 score = session['score']
                 answers = session['answers']
                 session.clear()
-                return render_template('result.html', score=score, total=total)
+                return render_template('review.html', score=score, total=total, answers=answers)
         
     question = session['question_order'][current_index]
     return render_template('quiz.html', question=question, current=current_index + 1, total=total, show_result=False
