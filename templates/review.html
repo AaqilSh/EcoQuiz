@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: #f4f4f9;
+        padding: 20px;
+      }
+      .question-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+      .incorrect {
+        color: red;
+        font-weight: bold;
+      }
+      .answer {
+        margin-bottom: 5px;
+      }
+      .fact {
+        font-style: italic;
+        color: #555;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Quiz Review</h2>
+      <h4 class="text-center">Your Score: {{ score }} / {{ total }}</h4>
+
+      {% for item in answers %}
+      <div class="question-card">
+        <h4>Q{{ loop.index }}. {{ item.question }}</h4>
+
+        {% for option in item.options %}
+        <div class="answer">
+          {% if option == item.selected %} {% if item.is_correct %} ✅
+          <span class="correct">{{ option }} (Your answer)</span> {% else %} ❌
+          <span class="incorrect">{{ option }} (Your answer)</span> {% endif %}
+          {% elif option == item.correct %} ✅
+          <strong class="correct">{{ option }} (Correct answer)</strong>
+          {% else %} {{ option }} {% endif %}
+        </div>
+        {% endfor %} {% if item.fact %}
+        <div class="fact">💡 {{ item.fact }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+
+      <div class="text-center">
+        <a href="{{ url_for('quiz') }}" class="btn btn-primary">Restart Quiz</a>
+      </div>
+    </div>
+  </body>
+</html>
