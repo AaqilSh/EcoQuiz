@@ -32,6 +32,7 @@ def quiz():
         session['score'] = 0
         random.shuffle(questions)
         session['question_order'] = questions
+        session['answers'] = []
 
     current_index = session['index']
     total = len(session['question_order'])
@@ -42,13 +43,22 @@ def quiz():
     if request.method == "POST":
         if 'answer' in request.form:
             selected_answer = request.form.get('answer')
+            current_question = session['question_order'][current_index]
             correct_answer = session['question_order'][current_index]['answer']
             fact = session['question_order'][current_index].get('fact', '')
             is_correct = selected_answer == correct_answer
             if is_correct:
                 session['score'] += 1
+            
+            session['answers'].append({
+                "question": current_question['question'],
+                "options": current_question['options'],
+                "selected": selected_answer,
+                "correct": correct_answer,
+                "is_correct": is_correct,
+                "fact": fact
+            })
 
-            question = session['question_order'][current_index]
             return render_template(
                 'quiz.html',
                 question=question,
@@ -66,6 +76,7 @@ def quiz():
           
             if current_index >= total:
                 score = session['score']
+                answers = session['answers']
                 session.clear()
                 return render_template('result.html', score=score, total=total)
         
