@@ -37,9 +37,6 @@ def quiz():
     current_index = session['index']
     total = len(session['question_order'])
 
-    if 'answers' not in session:
-    session['answers'] = []
-
     if request.method == "POST":
         if 'answer' in request.form:
             selected_answer = request.form.get('answer')
