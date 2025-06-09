@@ -40,7 +40,7 @@ def quiz():
     if request.method == "POST":
         if 'answer' in request.form:
             selected_answer = request.form.get('answer')
-            current_question = session['question_order'][current_index]
+            question = session['question_order'][current_index]
             correct_answer = session['question_order'][current_index]['answer']
             fact = session['question_order'][current_index].get('fact', '')
             is_correct = selected_answer == correct_answer
