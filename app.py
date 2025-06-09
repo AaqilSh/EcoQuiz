@@ -48,8 +48,8 @@ def quiz():
                 session['score'] += 1
             
             session['answers'].append({
-                "question": current_question['question'],
-                "options": current_question['options'],
+                "question": question['question'],
+                "options": question['options'],
                 "selected": selected_answer,
                 "correct": correct_answer,
                 "is_correct": is_correct,
