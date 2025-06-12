@@ -32,6 +32,26 @@
       }
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const showResult = {{ 'true' if show_result else 'false' }};
+    const isCorrect = {{ 'true' if is_correct else 'false' }};
+
+    if (showResult) {
+      if (isCorrect) {
+        document.getElementById('correctSound').play();
+
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+      } else {
+        document.getElementById('wrongSound').play();
+      }
+    }
+  });
+
     </script>
     <style>
 @keyframes fadeIn {
@@ -168,5 +188,6 @@
   </div>
 
   <script src="/static/quiz.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </body>
 </html>
