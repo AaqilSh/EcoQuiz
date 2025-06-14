@@ -1,3 +1,5 @@
+import random
+
 def get_user_input(num_options):
     while True:
         try:
