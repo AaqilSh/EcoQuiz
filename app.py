@@ -30,7 +30,6 @@ def quiz():
     if 'index' not in session:
         session['index'] = 0
         session['score'] = 0
-        session['current_difficulty'] = 'medium'    
         random.shuffle(questions)
         session['question_order'] = questions
         session['answers'] = []
@@ -47,7 +46,9 @@ def quiz():
             is_correct = selected_answer == correct_answer
             if is_correct:
                 session['score'] += 1
-            
+
+            session['current_difficulty'] = update_difficulty(is_correct, session['current_difficulty'])
+
             session['answers'].append({
                 "question": question['question'],
                 "options": question['options'],
