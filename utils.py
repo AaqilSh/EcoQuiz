@@ -11,3 +11,7 @@ def get_user_input(num_options):
 
 def ask_question():
     pass  
+
+
+def get_question_by_difficulty(questions, difficulty):
+    return random.choice([q for q in questions if q["difficulty"] == difficulty])
