@@ -69,6 +69,10 @@ def quiz():
                 is_correct=is_correct,
                 fact=fact
             )
+
+        difficulty = session.get("current_difficulty", "medium")
+        session["question"] = get_question_by_difficulty(questions, difficulty)
+        
         elif 'next' in request.form:
             session['index'] += 1
             current_index = session['index']
