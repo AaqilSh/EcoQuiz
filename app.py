@@ -36,15 +36,6 @@ def quiz():
 
     current_index = session['index']
     total = len(session['question_order'])
-    
-    elif 'next' in request.form:
-    session['index'] += 1
-    current_index = session['index']
-    if current_index >= total:
-        score = session['score']
-        answers = session['answers']
-        session.clear()
-        return render_template('review.html', score=score, total=total, answers=answers)
 
     if request.method == "POST":
         if 'answer' in request.form:
