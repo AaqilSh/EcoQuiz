@@ -35,6 +35,7 @@ def quiz():
         session['answers'] = []
 
     current_index = session['index']
+    question_order = session['question_order']
     total = len(session['question_order'])
 
     if request.method == "POST":
