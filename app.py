@@ -35,7 +35,16 @@ def quiz():
         session['answers'] = []
 
     current_index = session['index']
+    question_order = session['question_order']
     total = len(session['question_order'])
+
+    if current_index >= total:
+        score = session['score']
+        answers = session['answers']
+        session.clear()
+        return render_template('review.html', score=score, total=total, answers=answers)
+
+    question = question_order[current_index]
 
     if request.method == "POST":
         if 'answer' in request.form:
@@ -73,7 +82,7 @@ def quiz():
         difficulty = session.get("current_difficulty", "medium")
         session["question"] = get_question_by_difficulty(questions, difficulty)
         
-        elif 'next' in request.form:
+        if 'next' in request.form:
             session['index'] += 1
             current_index = session['index']
           
@@ -91,7 +100,7 @@ def quiz():
 def next_question():
     session["q_index"] += 1
     if session["q_index"] >= len(questions):
-        return redirect("/result")  # Redirect to final result page
+        return redirect("/result")  
     return redirect("/")
 
 
