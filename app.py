@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 import json
 import random
+from utils import get_question_by_difficulty, update_difficulty
 
 app = Flask(__name__)
 app.secret_key = "ecoquizsecret"  
