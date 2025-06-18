@@ -22,6 +22,7 @@ def start_quiz():
     random.shuffle(filtered)
     session['questions_order'] = filtered
     session['index'] = 0
+    session['current_difficulty'] = 'medium'
     session['current'] = 0
     session['score'] = 0
     return redirect("/quiz")
