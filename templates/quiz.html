@@ -1,101 +1,126 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}Eco Quiz{% endblock %} {% block
+content %}
 
-{% block title %}Eco Quiz{% endblock %}
-   <div class="max-w-xl w-full">
-          <div class="absolute top-0 right-0 p-4 text-sm text-gray-300">
-        ⏱ Time left: <span id="timer">15</span>s
-      </div>
-       <div class="mb-6">
-        <div class="text-sm mb-1 text-gray-300">
-          Question {{ current }} of {{ total }}
-        </div>
-        <div class="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
-          <div
-            class="bg-green-500 h-full transition-all duration-500 ease-out"
-            style="width: {{ (current / total) * 100 }}%;"
-          ></div>
-        </div>
-      </div>
-    <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl">
-
-      <div class="progress-container">
-  <div class="progress-bar" id="progress-bar" style="width: {{ (current / total) * 100 }}%;"></div>
-</div>
-
-<div x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)" x-show="show"
-     x-transition:enter="transition-opacity duration-500"
-     x-transition:enter-start="opacity-0"
-     x-transition:enter-end="opacity-100"
-     x-transition:leave="transition-opacity duration-300"
-     x-transition:leave-start="opacity-100"
-     x-transition:leave-end="opacity-0"
-     class="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl mt-10">
-
-    <h2 class="text-2xl font-semibold text-primary mb-4"> Question {{ current }} of {{ total }}</h2>
-    <form method="post" id="quizForm" class="space-y-6">
-    <p class="text-lg font-medium mb-4">{{ question.question }}</p>
-    <div class="space-y-2">
-      {% for opt in question.options %}
-           {% set is_selected = opt == selected %}
-      {% set is_correct_opt = opt == correct %}
-
-      <label class="flex items-center space-x-3 p-3 rounded-xl transition duration-300 ease-in-out transform
-       {% if show_result %}
-          {% if is_correct_opt %}
-            bg-green-700 scale-105
-          {% elif is_selected %}
-            bg-red-700 scale-105
-          {% else %}
-            bg-gray-700
-          {% endif %}
-        {% else %}
-          hover:bg-gray-700 hover:scale-105
-        {% endif %}
-        p-2 rounded-lg transition
-        ">       
-      <input
-      type="radio"
-      name="answer"
-      value="{{ opt }}"
-               {% if is_selected %}checked{% endif %}
-          {% if show_result %}disabled{% endif %}
-      class="form-radio h-5 w-5 text-primary bg-gray-700 border-gray-600 focus:ring-primary"/> 
-                <span class="text-gray-200">{{ opt }}</span>
-              </label>
-      {% endfor %}
-              </div>
-{% if show_result %}
-    <div class="mt-4 text-lg font-semibold animate-fade-in">
-      {% if is_correct %}
-      <div class="text-green-400 animate-bounce transition duration-300 ease-out scale-100">  ✅ Correct! </div>
-      {% else %}
-              <div class="text-red-400 animate-shake transition duration-300 ease-out scale-100">
-
-        ❌ Wrong. Correct answer: <span class="text-primary font-bold">{{ correct }}</span>
-                </div>
-  <div class="mt-6 p-4 bg-gray-700 rounded-lg border border-primary animate-fade-in">
-    <h3 class="text-lg font-semibold text-primary">🌱 Eco Fact:</h3>
-    <p class="text-gray-300 mt-2">{{ fact }}</p>
+<div class="max-w-xl w-full">
+  <div class="absolute top-0 right-0 p-4 text-sm text-gray-300">
+    ⏱ Time left: <span id="timer">15</span>s
   </div>
-
-      {% endif %}
+  <div class="mb-6">
+    <div class="text-sm mb-1 text-gray-300">
+      Question {{ current }} of {{ total }}
     </div>
-  {% endif %}
-                    <div class="pt-4">
-      {% if not show_result %}
-      <button type="submit" name="answer" class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">Submit</button>
-    {% else %}
-      <button type="submit" name="next" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">Next</button>
-    {% endif %}
-                    </div>
-    </form>
+    <div class="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
+      <div
+        class="bg-green-500 h-full transition-all duration-500 ease-out"
+        style="width: {{ (current / total) * 100 }}%;"
+      ></div>
+    </div>
   </div>
-    {% if show_result %}
+  <div class="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl">
+    <div class="progress-container">
+      <div
+        class="progress-bar"
+        id="progress-bar"
+        style="width: {{ (current / total) * 100 }}%;"
+      ></div>
+    </div>
 
-{% endif %}
+    <div
+      x-data="{ show: false }"
+      x-init="setTimeout(() => show = true, 100)"
+      x-show="show"
+      x-transition:enter="transition-opacity duration-500"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition-opacity duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl mt-10"
+    >
+      <h2 class="text-2xl font-semibold text-primary mb-4">
+        Question {{ current }} of {{ total }}
+      </h2>
+      <form method="post" id="quizForm" class="space-y-6">
+        <p class="text-lg font-medium mb-4">{{ question.question }}</p>
+        <div class="space-y-2">
+          {% for opt in question.options %} {% set is_selected = opt == selected
+          %} {% set is_correct_opt = opt == correct %}
+
+          <label
+            class="flex items-center space-x-3 p-3 rounded-xl transition duration-300 ease-in-out transform {% if show_result %} {% if is_correct_opt %} bg-green-700 scale-105 {% elif is_selected %} bg-red-700 scale-105 {% else %} bg-gray-700 {% endif %} {% else %} hover:bg-gray-700 hover:scale-105 {% endif %} p-2 rounded-lg transition"
+          >
+            <input
+              type="radio"
+              name="answer"
+              value="{{ opt }}"
+              {%
+              if
+              is_selected
+              %}checked{%
+              endif
+              %}
+              {%
+              if
+              show_result
+              %}disabled{%
+              endif
+              %}
+              class="form-radio h-5 w-5 text-primary bg-gray-700 border-gray-600 focus:ring-primary"
+            />
+            <span class="text-gray-200">{{ opt }}</span>
+          </label>
+          {% endfor %}
+        </div>
+        {% if show_result %}
+        <div class="mt-4 text-lg font-semibold animate-fade-in">
+          {% if is_correct %}
+          <div
+            class="text-green-400 animate-bounce transition duration-300 ease-out scale-100"
+          >
+            ✅ Correct!
+          </div>
+          {% else %}
+          <div
+            class="text-red-400 animate-shake transition duration-300 ease-out scale-100"
+          >
+            ❌ Wrong. Correct answer:
+            <span class="text-primary font-bold">{{ correct }}</span>
+          </div>
+          <div
+            class="mt-6 p-4 bg-gray-700 rounded-lg border border-primary animate-fade-in"
+          >
+            <h3 class="text-lg font-semibold text-primary">🌱 Eco Fact:</h3>
+            <p class="text-gray-300 mt-2">{{ fact }}</p>
+          </div>
+
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="pt-4">
+          {% if not show_result %}
+          <button
+            type="submit"
+            name="answer"
+            class="bg-primary hover:bg-emerald-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+          >
+            Submit
+          </button>
+          {% else %}
+          <button
+            type="submit"
+            name="next"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+          >
+            Next
+          </button>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+    {% if show_result %} {% endif %}
   </div>
 
   <script src="/static/quiz.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  </body>
-</html>
+</div>
+{% endblock %}
