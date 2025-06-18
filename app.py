@@ -19,7 +19,8 @@ def start_quiz():
     all_questions = load_questions()
     filtered = [q for q in all_questions if q["difficulty"] == difficulty]
     random.shuffle(filtered)
-    session['questions'] = filtered
+    session['questions_order'] = filtered
+    session['index'] = 0
     session['current'] = 0
     session['score'] = 0
     return redirect("/quiz")
