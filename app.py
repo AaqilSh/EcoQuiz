@@ -20,7 +20,7 @@ def start_quiz():
     all_questions = load_questions()
     filtered = [q for q in all_questions if q["difficulty"] == difficulty]
     random.shuffle(filtered)
-    session['questions_order'] = filtered
+    session['question_order'] = filtered
     session['index'] = 0
     session['current_difficulty'] = 'medium'
     session['current'] = 0
