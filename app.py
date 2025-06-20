@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 import json
 import random
+from utils import get_question_by_difficulty, update_difficulty
 
 app = Flask(__name__)
 app.secret_key = "ecoquizsecret"  
@@ -19,7 +20,9 @@ def start_quiz():
     all_questions = load_questions()
     filtered = [q for q in all_questions if q["difficulty"] == difficulty]
     random.shuffle(filtered)
-    session['questions'] = filtered
+    session['question_order'] = filtered
+    session['index'] = 0
+    session['current_difficulty'] = 'medium'
     session['current'] = 0
     session['score'] = 0
     return redirect("/quiz")
