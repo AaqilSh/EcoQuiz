@@ -25,6 +25,7 @@ def start_quiz():
     session['current_difficulty'] = 'medium'
     session['current'] = 0
     session['score'] = 0
+    session['answers'] = []
     return redirect("/quiz")
 
 @app.route("/quiz", methods=["GET", "POST"])
