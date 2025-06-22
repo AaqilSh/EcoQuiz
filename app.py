@@ -37,6 +37,7 @@ def quiz():
         random.shuffle(questions)
         session['question_order'] = questions
         session['answers'] = []
+        session['current_difficulty'] = 'easy'
 
     current_index = session['index']
     question_order = session['question_order']
