@@ -111,7 +111,7 @@ def next_question():
 @app.route('/restart')
 def restart():
     session.clear()
-    return redirect(url_for('quiz'))
+    return redirect(url_for('start_quiz'))
 
 @app.route("/result")
 def result():
