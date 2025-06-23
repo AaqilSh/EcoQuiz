@@ -9,3 +9,7 @@ QUESTIONS_FILE = "questions.json"
 def load_questions():
     with open(QUESTIONS_FILE) as f:
         return json.load(f)
+    
+def save_questions(questions):
+    with open(QUESTIONS_FILE, "w") as f:
+        json.dump(questions, f, indent=2)
