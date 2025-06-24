@@ -13,3 +13,8 @@ def load_questions():
 def save_questions(questions):
     with open(QUESTIONS_FILE, "w") as f:
         json.dump(questions, f, indent=2)
+
+@admin_bp.route("/")
+def dashboard():
+    questions = load_questions()
+    return render_template("admin/dashboard.html", questions=questions)
