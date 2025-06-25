@@ -18,3 +18,25 @@ def save_questions(questions):
 def dashboard():
     questions = load_questions()
     return render_template("admin/dashboard.html", questions=questions)
+
+@admin_bp.route("/add", methods=["GET", "POST"])
+def add_question():
+    if request.method == "POST":
+        question = request.form["question"]
+        options = request.form.getlist("options")
+        answer = request.form["answer"]
+        difficulty = request.form["difficulty"]
+        fact = request.form["fact"]
+
+        questions = load_questions()
+        questions.append({
+            "question": question,
+            "options": options,
+            "answer": answer,
+            "difficulty": difficulty,
+            "fact": fact
+        })
+        save_questions(questions)
+        flash("Question added successfully!", "success")
+        return redirect(url_for("admin.dashboard"))
+    return render_template("admin/add_question.html")
