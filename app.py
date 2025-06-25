@@ -2,10 +2,12 @@ from flask import Flask, render_template, request, redirect, session
 import json
 import random
 from utils import get_question_by_difficulty, update_difficulty
+from admin import admin_bp
 
 app = Flask(__name__)
 app.secret_key = "ecoquizsecret"  
-
+app.register_blueprint(admin_bp, url_prefix='/admin')
+   
 def load_questions():
     with open("questions.json") as f:
         return json.load(f)
