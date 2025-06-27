@@ -2,7 +2,11 @@
 {% extends "admin/admin_base.html" %} {% block title %}Admin Dashboard{%
 endblock %} {% block content %}
 <h2>Admin Dashboard</h2>
-<a href="{{ url_for('admin.add_question') }}">Add New Question</a>
+<a
+  href="{{ url_for('admin.add_question') }}"
+  class="inline-block mb-6 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold transition"
+  >Add New Question</a
+>
 <div class="overflow-x-auto">
   <table class="min-w-full bg-gray-700 rounded-lg shadow">
     <thead>
