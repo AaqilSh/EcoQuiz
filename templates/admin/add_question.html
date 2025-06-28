@@ -1,7 +1,7 @@
 {% extends "admin/admin_base.html" %} {% block title %}Add Question{% endblock
 %} {% block content %}
-<h2>Add New Question</h2>
-<form method="post">
+<h2 class="text-2xl font-bold mb-6">Add New Question</h2>
+<form method="post" class="space-y-6">
   <label>Question: <input type="text" name="question" required /></label><br />
   <label>Option 1: <input type="text" name="options" required /></label><br />
   <label>Option 2: <input type="text" name="options" required /></label><br />
