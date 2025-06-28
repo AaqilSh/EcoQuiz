@@ -2,7 +2,15 @@
 %} {% block content %}
 <h2 class="text-2xl font-bold mb-6">Add New Question</h2>
 <form method="post" class="space-y-6">
-  <label>Question: <input type="text" name="question" required /></label><br />
+  <div>
+    <label class="block mb-2 font-semibold text-gray-200">Question:</label>
+    <input
+      type="text"
+      name="question"
+      required
+      class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+    />
+  </div>
   <label>Option 1: <input type="text" name="options" required /></label><br />
   <label>Option 2: <input type="text" name="options" required /></label><br />
   <label>Option 3: <input type="text" name="options" required /></label><br />
