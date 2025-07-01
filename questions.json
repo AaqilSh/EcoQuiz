@@ -1,30 +1,39 @@
 [
   {
     "question": "Which gas is primarily responsible for global warming?",
-    "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
     "answer": "Carbon Dioxide",
     "difficulty": "easy",
     "fact": "Carbon dioxide is a greenhouse gas that traps heat in our atmosphere, leading to climate change."
-
-
   },
   {
     "question": "What can be recycled?",
-    "options": ["Plastic bottles", "Styrofoam", "Chip bags", "Pizza boxes"],
+    "options": [
+      "Plastic bottles",
+      "Styrofoam",
+      "Chip bags",
+      "Pizza boxes"
+    ],
     "answer": "Plastic bottles",
-	    "difficulty": "easy",
-      "fact": "Plastic bottles are widely accepted for recycling and can be turned into clothing, carpets, and more."
-
-
+    "difficulty": "easy",
+    "fact": "Plastic bottles are widely accepted for recycling and can be turned into clothing, carpets, and more."
   },
   {
     "question": "What is the most sustainable energy source?",
-    "options": ["Coal", "Wind", "Oil", "Natural Gas"],
+    "options": [
+      "Coal",
+      "Wind",
+      "Oil",
+      "Natural Gas"
+    ],
     "answer": "Wind",
-	    "difficulty": "easy",
-      "fact": "Wind energy is clean, renewable, and doesn’t emit greenhouse gases during operation."
-
-
+    "difficulty": "easy",
+    "fact": "Wind energy is clean, renewable, and doesn\u00e2\u20ac\u2122t emit greenhouse gases during operation."
   },
   {
     "question": "What does 'biodegradable' mean?",
@@ -35,19 +44,20 @@
       "Lasts forever"
     ],
     "answer": "Breaks down naturally in the environment",
-	    "difficulty": "medium",
-      "fact": "Biodegradable items can decompose naturally with the help of bacteria and fungi, reducing pollution."
-
-
+    "difficulty": "medium",
+    "fact": "Biodegradable items can decompose naturally with the help of bacteria and fungi, reducing pollution."
   },
   {
     "question": "Which of these items takes the longest to decompose?",
-    "options": ["Banana peel", "Plastic bottle", "Newspaper", "Cotton t-shirt"],
+    "options": [
+      "Banana peel",
+      "Plastic bottle",
+      "Newspaper",
+      "Cotton t-shirt"
+    ],
     "answer": "Plastic bottle",
-	    "difficulty": "hard",
-      "fact": "Plastic bottles can take up to 450 years to decompose, making them a major environmental concern."
-
-
+    "difficulty": "hard",
+    "fact": "Plastic bottles can take up to 450 years to decompose, making them a major environmental concern."
   },
   {
     "question": "How can you reduce water waste at home?",
@@ -58,28 +68,32 @@
       "Use bottled water only"
     ],
     "answer": "Fix leaky faucets",
-	    "difficulty": "medium",
-      "fact": "A single leaky faucet can waste over 3,000 gallons of water per year if not fixed."
-
-
+    "difficulty": "medium",
+    "fact": "A single leaky faucet can waste over 3,000 gallons of water per year if not fixed."
   },
   {
     "question": "Which of these is a renewable energy source?",
-    "options": ["Natural Gas", "Coal", "Wind", "Diesel"],
+    "options": [
+      "Natural Gas",
+      "Coal",
+      "Wind",
+      "Diesel"
+    ],
     "answer": "Wind",
-	    "difficulty": "hard",
-      "fact": "Unlike fossil fuels, wind energy doesn't run out and has minimal impact on the environment."
-
-
+    "difficulty": "hard",
+    "fact": "Unlike fossil fuels, wind energy doesn't run out and has minimal impact on the environment."
   },
   {
     "question": "Which country leads the world in solar energy production (as of 2023)?",
-    "options": ["Germany", "USA", "India", "China"],
+    "options": [
+      "Germany",
+      "USA",
+      "India",
+      "China"
+    ],
     "answer": "China",
-	    "difficulty": "medium",
-      "fact": "China has the world’s largest solar capacity, contributing significantly to global renewable energy."
-
-
+    "difficulty": "medium",
+    "fact": "China has the world\u00e2\u20ac\u2122s largest solar capacity, contributing significantly to global renewable energy."
   },
   {
     "question": "Why are bees important for the environment?",
@@ -90,10 +104,8 @@
       "They scare away pests"
     ],
     "answer": "They pollinate plants",
-	    "difficulty": "hard",
-      "fact": "Bees help pollinate over 70% of crops we eat, playing a crucial role in food production and biodiversity."
-
-
+    "difficulty": "hard",
+    "fact": "Bees help pollinate over 70% of crops we eat, playing a crucial role in food production and biodiversity."
   },
   {
     "question": "What is 'upcycling'?",
@@ -104,44 +116,79 @@
       "Disposing of toxic waste safely"
     ],
     "answer": "Turning waste into higher-value products",
-	    "difficulty": "hard",
-      "fact": "Upcycling gives new life to old items, reducing waste while encouraging creativity and sustainability."
-
-
+    "difficulty": "hard",
+    "fact": "Upcycling gives new life to old items, reducing waste while encouraging creativity and sustainability."
   },
   {
     "question": "What is the main cause of ocean pollution?",
-    "options": ["Plastic waste", "Oil spills", "Fishing nets", "Radioactive waste"],
+    "options": [
+      "Plastic waste",
+      "Oil spills",
+      "Fishing nets",
+      "Radioactive waste"
+    ],
     "answer": "Plastic waste",
     "difficulty": "medium",
     "fact": "Over 8 million tons of plastic end up in the ocean each year, harming marine life and ecosystems."
   },
   {
     "question": "Which of these appliances uses the most electricity at home?",
-    "options": ["Refrigerator", "TV", "Washing machine", "Air conditioner"],
+    "options": [
+      "Refrigerator",
+      "TV",
+      "Washing machine",
+      "Air conditioner"
+    ],
     "answer": "Air conditioner",
     "difficulty": "medium",
     "fact": "Air conditioning can account for up to 60% of a household's summer electricity bill."
   },
   {
     "question": "What is the purpose of composting?",
-    "options": ["To burn waste", "To make fertilizer", "To clean water", "To kill bacteria"],
+    "options": [
+      "To burn waste",
+      "To make fertilizer",
+      "To clean water",
+      "To kill bacteria"
+    ],
     "answer": "To make fertilizer",
     "difficulty": "easy",
     "fact": "Composting turns food scraps and yard waste into nutrient-rich soil, reducing landfill waste."
   },
   {
     "question": "Which tree-planting initiative is aiming to plant over a trillion trees worldwide?",
-    "options": ["Green Earth Project", "One Trillion Trees", "Billion Trees Initiative", "Global Forest Act"],
+    "options": [
+      "Green Earth Project",
+      "One Trillion Trees",
+      "Billion Trees Initiative",
+      "Global Forest Act"
+    ],
     "answer": "One Trillion Trees",
     "difficulty": "hard",
     "fact": "The 'One Trillion Trees' initiative aims to combat climate change by restoring global forests."
   },
   {
     "question": "What is the average water footprint of producing one cotton t-shirt?",
-    "options": ["200 liters", "500 liters", "2,700 liters", "5,000 liters"],
+    "options": [
+      "200 liters",
+      "500 liters",
+      "2,700 liters",
+      "5,000 liters"
+    ],
     "answer": "2,700 liters",
     "difficulty": "hard",
-    "fact": "Producing one cotton t-shirt can use up to 2,700 liters of water—enough for one person to drink for 2.5 years!"
+    "fact": "Producing one cotton t-shirt can use up to 2,700 liters of water\u00e2\u20ac\u201denough for one person to drink for 2.5 years!"
+  },
+  {
+    "question": "What is the main greenhouse gas responsible for climate change?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Helium"
+    ],
+    "answer": "Carbon dioxide",
+    "difficulty": "easy",
+    "fact": "Carbon dioxide, produced mainly by burning fossil fuels, is the primary greenhouse gas driving recent climate change."
   }
 ]
