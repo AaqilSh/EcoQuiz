@@ -5,6 +5,8 @@ import os
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
 QUESTIONS_FILE = "questions.json"
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "your_strong_password"
 
 def load_questions():
     with open(QUESTIONS_FILE) as f:
