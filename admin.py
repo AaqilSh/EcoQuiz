@@ -18,7 +18,17 @@ def save_questions(questions):
     with open(QUESTIONS_FILE, "w") as f:
         json.dump(questions, f, indent=2)
 
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin.login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
 @admin_bp.route("/")
+@admin_required
 def dashboard():
     questions = load_questions()
     return render_template("admin/dashboard.html", questions=questions)
@@ -61,11 +71,3 @@ def add_question():
 def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('admin.login'))
-
-def admin_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if not session.get('admin_logged_in'):
-            return redirect(url_for('admin.login'))
-        return f(*args, **kwargs)
-    return decorated_function
