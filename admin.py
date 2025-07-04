@@ -21,6 +21,18 @@ def dashboard():
     questions = load_questions()
     return render_template("admin/dashboard.html", questions=questions)
 
+@admin_bp.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session['admin_logged_in'] = True
+            return redirect(url_for('admin.dashboard'))
+        else:
+            flash('Invalid credentials', 'error')
+    return render_template('admin/login.html')
+
 @admin_bp.route("/add", methods=["GET", "POST"])
 def add_question():
     if request.method == "POST":
