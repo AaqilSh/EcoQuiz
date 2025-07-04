@@ -54,3 +54,8 @@ def add_question():
         flash("Question added successfully!", "success")
         return redirect(url_for("admin.dashboard"))
     return render_template("admin/add_question.html")
+
+@admin_bp.route('/logout')
+def logout():
+    session.pop('admin_logged_in', None)
+    return redirect(url_for('admin.login'))
