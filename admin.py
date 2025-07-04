@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
+from functools import wraps
+from flask import session, redirect, url_for
 import json
 import os
 
@@ -59,3 +61,11 @@ def add_question():
 def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('admin.login'))
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin.login'))
+        return f(*args, **kwargs)
+    return decorated_function
