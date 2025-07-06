@@ -121,3 +121,7 @@ def result():
     score = session.get('score', 0)
     total = len(session.get('questions', []))
     return render_template("result.html", score=score, total=total)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
