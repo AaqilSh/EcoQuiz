@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from functools import wraps
-from flask import session, redirect, url_for
 import json
 import os
 
