@@ -14,3 +14,8 @@ class QuestionService:
 	def save_questions(self, questions):
 		with open(self.questions_file, "w") as f:
 			json.dump(questions, f, indent=2)
+
+	def get_question_by_difficulty(self, difficulty):
+		questions = self.load_questions()
+		filtered = [q for q in questions if q["difficulty"] == difficulty]
+		return filtered
