@@ -19,3 +19,16 @@ class QuestionService:
 		questions = self.load_questions()
 		filtered = [q for q in questions if q["difficulty"] == difficulty]
 		return filtered
+	
+	def update_difficulty(self, is_correct, current_difficulty):	
+		difficulty_levels = ["easy", "medium", "hard"]
+		current_index = difficulty_levels.index(current_difficulty)
+
+		if is_correct:
+			if current_index < len(difficulty_levels) - 1:
+				return difficulty_levels[current_index + 1]
+		else:
+			if current_index > 0:
+				return difficulty_levels[current_index - 1]
+		
+		return current_difficulty
