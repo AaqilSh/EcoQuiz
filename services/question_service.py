@@ -10,3 +10,7 @@ class QuestionService:
 			return []
 		with open(self.questions_file, "r") as f:
 			return json.load(f)
+		
+	def save_questions(self, questions):
+		with open(self.questions_file, "w") as f:
+			json.dump(questions, f, indent=2)
