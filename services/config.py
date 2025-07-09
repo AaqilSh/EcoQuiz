@@ -7,3 +7,10 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+
+    
+class ProductionConfig(Config):
+    DEBUG = False
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    if not SECRET_KEY:
+        raise ValueError("No SECRET_KEY found.")
